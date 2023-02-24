@@ -332,7 +332,9 @@ nav .fas{
 
 @media only screen and (max-width: 600px){
     #header{
-        background-image: url(images/3C1CF0D0-37B9-49DA-A3FF-78B689E09A49.jpg);
+        
+           background-image: url(images/3C1CF0D0-37B9-49DA-A3FF-78B689E09A49.JPEG);
+/*         background-image: url(images/3C1CF0D0-37B9-49DA-A3FF-78B689E09A49.jpg); */
         
     }
     .header-text{
