@@ -8,6 +8,7 @@ html{
     scroll-behavior: smooth;
 }
 body{
+   
     background: #080808;
    
     color: aliceblue;
@@ -33,7 +34,7 @@ nav{
 }
 
 .logo{
-    width: 140px;
+    width: 110px;
 }
 
 nav ul li{
@@ -72,6 +73,78 @@ nav ul li a:hover::after{
 .header-text h1 span{
     color: #ff004f;
 }
+/* the animation */
+
+.wrapper{
+
+    display: flex;
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #080808;
+}
+
+.wrapper.static-txt{
+
+    color:#fff;
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.wrapper .dynamic-txts{
+    margin-left :15px;
+    line-height: 90px;
+    height:90px;
+    overflow: hidden;
+
+}
+.dynamic-txts li{
+
+    list-style:none;
+    color:#ff4c29;
+    font-size:60px;
+    font-weight: 500;
+    top:0;
+    position: relative;
+    animation: slide 12s steps(4)
+    infinite;
+}
+
+@keyframes slide{
+    100%{
+        top: -360px;
+    }
+}
+.dynamic-txts li{
+    position:relative;
+}
+
+
+.dynamic-txts .tab-links::after{
+    content:"";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color:#080808;
+    border-left:2px solid #ff4c29;
+    animation:
+    typing 2s steps(24),
+    infinite;
+
+}
+@keyframes typing{
+    40%,
+    60%{
+        left: calc(100% + 30px);
+    }
+    100%{
+        left:0;
+    }
+   
+}
+
 /* -----------about--------------- */
 #about{
     padding: 80px 0;
@@ -98,6 +171,8 @@ nav ul li a:hover::after{
     font-size: 60px;
     font-weight: 600;
     color: #fff;
+    display: flex important!;
+    justify-content: centre important!;
 }
 
 .tab-titles{
@@ -219,6 +294,10 @@ nav ul li a:hover::after{
     font-size: 14px;
    transition: height 0.5s;
 }
+.layer h2{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
 .layer h3{
     font-weight: 500;
     margin-bottom: 20px;
@@ -235,10 +314,52 @@ nav ul li a:hover::after{
     border-radius: 50%;
     text-align: center;
 }
+.layer2{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), #16cd0f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+   transition: height 0.5s;
+}
+.layer2 h2{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer2 h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer2 a{
+    margin-top: 20px;
+    color: #16cd0f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
 .work:hover img{
     transform: scale(1.1);
 }
 .work:hover .layer{
+    height: 100%;
+}
+.work:hover .layer2{
     height: 100%;
 }
 .btn{
@@ -332,9 +453,7 @@ nav .fas{
 
 @media only screen and (max-width: 600px){
     #header{
-        
-           background-image: url(images/3C1CF0D0-37B9-49DA-A3FF-78B689E09A49.JPEG);
-/*         background-image: url(images/3C1CF0D0-37B9-49DA-A3FF-78B689E09A49.jpg); */
+        background-image: url(images/SSNEW.jpg)
         
     }
     .header-text{
