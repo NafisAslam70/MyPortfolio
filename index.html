@@ -11,33 +11,126 @@
     <script src="https://kit.fontawesome.com/c84a24e08c.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
     <script src="jquery-3.6.3.min.js"></script>
-</head>
-<body>
-<div id="header">
-    <div class="container">
-        <nav>
-            <img src="images/NA-LOGO'" class="logo">
-            <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <!-- <i class="icon fa-solid fa-times fa-4x" onclick="closemenu()"></i> -->
-                <!-- <i class="fas fa-times" onclick="closemenu()"></i> -->
-            </ul>
-            <!-- <i class="icon fa-solid fa-code fa-4x"></i> -->
-            <!-- <i class="icon fa-solid fa-bars fa-4x" onclick="openmenu()"></i> -->
-            <!-- <i class="fas fa-bars" onclick="openmenu()"></i> -->
-        </nav>
-        
-        <div class="header-text">
-            <h1>Hi, I'm <span>Nafis</span><br><span>Aslam</span> from India!</h1>
-            <p>A very outgoing student & <br>
-                an aspiring social activist!</p>
+    <head>
+    <title>Nafis Aslam</title>
+    <style>
+            .header-text h2 span{
+                color: red;
+                font-weight: bold;
+            }
+            #text{
+                color: black;
+            }
+            .header-text h2 {
+            color:black;
+            background-color: white;
+            display: inline-block;
+            }
+
+            .header-text h2.animating {
+                background-color: aliceblue;
+               
+             }
+             @media only screen and (max-width: 600px) {
+            /* Hide the side menu on screens smaller than 600px */
+            #sidemenu {
+            display: none;
+            }
+
+            /* Show a toggle button for the side menu */
+            #menu-toggle {
+            display: block;
+            }
+
+            /* Set the logo to be centered */
+            .logo {
+            margin: auto;
+            display: block;
+            }
+
+            /* Create a new dropdown menu for mobile */
+            #dropdown-menu {
+            display: none;
+            }
+
+            /* Show the dropdown menu when the toggle button is clicked */
+            #menu-toggle:checked ~ #dropdown-menu {
+            display: block;
+            }
+
+            /* Style the dropdown menu */
+            #dropdown-menu li {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            }
+            }
+     </style>
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="images/gifFile 2.GIF" class="logo">
+                    <ul id="sidemenu">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        
+                    </ul>
+                </nav>
+                
+                <div class="header-text">
+                <h1>Hi, I'm <span id="name">Nafis Aslam</span>.</h1>
+                <h2>I'm <span id="text"></span><span id="cursor">|</span></h2>
+            </div>
+
+            <script>
+            let text = document.getElementById('text');
+            let name = document.getElementById('name');
+            let cursor = document.getElementById('cursor');
+            let i = 0;
+            let phrases = ['a Learner!', 'a CS-Student!', 'a Web Developer!', 'a Programmer!'];
+            let speed = 100;
+
+            function typeWriter() {
+                if (i === phrases.length) {
+                    i = 0;
+                }
+
+                let word = phrases[i];
+                let j = 0;
+                let interval = setInterval(function() {
+                    text.innerHTML += word.charAt(j);
+                    j++;
+                    if (j === word.length) {
+                        clearInterval(interval);
+                        setTimeout(function() {
+                            deleteWord(word);
+                        }, 1000);
+                    }
+                }, speed);
+            }
+
+            function deleteWord(word) {
+                let interval = setInterval(function() {
+                    text.innerHTML = text.innerHTML.slice(0, -1);
+                    if (text.innerHTML === '') {
+                        clearInterval(interval);
+                        i++;
+                        typeWriter();
+                    }
+                }, speed / 2);
+            }
+
+            typeWriter();
+            </script>
+            </div>
         </div>
-    </div>
-</div>
+
 <!-- -----------about---------- -->
 <div id="about">
     <div class="container">
@@ -87,7 +180,7 @@
                     <ul>
                         <li><span>2021-Present</span><br><strong>Bachelor of Computer Science</strong><br> at <span>University Sains Malaysia, Malaysia</span><br><em>Majoring in Intelligent Computing and Minoring in Management</em></li>
                         </p><br><br>
-                        
+
                         <li><span>2020-Present</span><br><strong>Bachelor of Arts in English Literature</strong><br> at <span>Indra Gandhi National Open University, New Delhi, India</span></li>
                         <br><br>
 
@@ -112,14 +205,13 @@
 
 <!-- ---------Highlits---------------- -->
 <div id="portfolio">
-    <div class="container">
+    <div class="container ">
         <h1 class="sub-title">Highlights</h1>
         <div class="work-list">
             <div class="work">
                 <img src="images/4.jpg">
                 <div class="layer">
                     <h2>My Story with MEED!</h2>
-                    <br>
                     <p>It's my journey with MEED and how I, with a team, was able to
                        bring an impact in education field at my locale</p>
                     <a href="https://www.mymeedpss.com/about"><i class="fas fa-external-link-alt"></i></a>
@@ -129,7 +221,6 @@
                 <img src="images/DSC_0205.jpg">
                 <div class="layer">
                     <h2>CONTRIBUTE US!</h2>
-                    <br>
                     <p>Add a helping hand to our FOUNDATION though various projects<br>
                     Be an ambassador.</p>
                     <a href="https://www.nafeesfoundation.org/projects"><i class="fas fa-external-link-alt"></i></a>
@@ -139,7 +230,6 @@
                 <img src="images/IMG_6272.jpg">
                 <div class="layer">
                     <h2>A CALL FROM THE SKY!</h2>
-                    <br>
                     <p>A poetry for introspection!</p>
                     <a href="https://youtu.be/w-L0bx4si8A"><i class="fas fa-external-link-alt"></i></a>
                 </div>
@@ -149,7 +239,7 @@
 </div>
 <!-- ---------services---------------- -->
 <div id="services">
-    <div class="container">
+    <div class="container ">
         <h1 class="sub-title">My Services</h1>
         <div class="services-list">
             <div>
@@ -187,7 +277,7 @@
 </div>
 <!-- ----------portfolio------------ -->
 <div id="portfolio">
-    <div class="container">
+    <div class="container ">
         <h1 class="sub-title">My Recent Pojects</h1>
         <div class="work-list">
             <div class="work">
@@ -220,6 +310,8 @@
         <a href="https://www.nafeesfoundation.org/message-from-founder" class="btn">See more</a>
     </div>
 </div>
+<!-- ..............POETRY AND BLOGS............ -->
+
 <!-- ----------contact------------- -->
 <div id="contact">
     <div class="container">
@@ -254,8 +346,11 @@
         <p>Copyright 2023 ©NafisAslam <i class="fas fa-heart"></i> </p>
     </div>
 </div>
+</div>
 
+<!-- ----------Animation------------- -->
 
+<!-- ----------END------------- -->
 
 <script>
 
